@@ -1,0 +1,263 @@
+Parsing mapping file...
+Loading human data (per-subgroup split)...
+
+Human subgroup sample sizes (perception keys coverage):
+  Edu-Low  : 8/8 perception keys populated
+  Edu-High : 8/8 perception keys populated
+  Male     : 8/8 perception keys populated
+  Female   : 8/8 perception keys populated
+  OutLow   : 8/8 perception keys populated
+  OutHigh  : 8/8 perception keys populated
+  ERLow    : 8/8 perception keys populated
+
+Loading Sonnet 4.5 (10 files)...
+
+Loading Opus 4.6 (10 files)...
+
+Loading GPT-5.2 (10 files)...
+
+Loading GPT-4.1 (10 files)...
+
+==============================================================================
+  PERCEPTION (Q1, Q10) - MODAL MAE
+==============================================================================
+Model          Edu-LowEdu-High    Male  Female  OutLow OutHigh   ERLow
+  Sonnet 4.5     1.625   0.750   0.750   0.625   0.750   0.875   0.625
+  Opus 4.6       1.375   1.250   1.125   1.125   1.000   0.375   1.000
+  GPT-5.2        1.125   1.250   0.875   0.500   0.750   1.000   0.875
+  GPT-4.1        1.375   1.125   1.250   0.625   0.875   1.125   1.125
+
+==============================================================================
+  PERCEPTION (Q1, Q10) - EXPECTED ABSOLUTE DISTANCE
+==============================================================================
+Model          Edu-LowEdu-High    Male  Female  OutLow OutHigh   ERLow
+  Sonnet 4.5     1.304   0.848   0.970   1.022   0.978   1.077   0.972
+  Opus 4.6       1.108   1.230   1.032   1.049   1.042   1.020   1.034
+  GPT-5.2        1.030   1.082   0.922   0.983   0.959   0.926   0.954
+  GPT-4.1        1.109   1.177   0.991   1.015   1.006   0.994   1.011
+
+==============================================================================
+  INFORMATION (Q2-Q9) - MODAL MAE
+==============================================================================
+Model          Edu-LowEdu-High    Male  Female  OutLow OutHigh   ERLow
+  Sonnet 4.5     1.200   1.065   1.214   1.000   1.250   1.000   1.138
+  Opus 4.6       0.720   0.677   0.679   0.571   0.857   0.571   0.690
+  GPT-5.2        0.880   0.645   0.714   0.679   0.857   0.714   0.621
+  GPT-4.1        1.000   0.903   0.750   0.714   0.786   0.786   0.759
+
+==============================================================================
+  INFORMATION (Q2-Q9) - EXPECTED ABSOLUTE DISTANCE
+==============================================================================
+Model          Edu-LowEdu-High    Male  Female  OutLow OutHigh   ERLow
+  Sonnet 4.5     0.951   1.006   1.051   1.001   1.110   0.978   1.067
+  Opus 4.6       0.688   0.755   0.808   0.745   0.859   0.737   0.815
+  GPT-5.2        0.796   0.778   0.857   0.779   0.895   0.823   0.856
+  GPT-4.1        0.854   0.887   0.932   0.890   0.961   0.935   0.957
+
+==============================================================================
+  PER-QUESTION MODAL DISTANCES  (Perception, Edu-Low subgroup)
+==============================================================================
+
+  Sonnet 4.5:
+    DS1-Q 1: LLM=B  Human=A  |dist|=1
+    DS1-Q10: LLM=D  Human=B  |dist|=2
+    DS2-Q 1: LLM=B  Human=A  |dist|=1
+    DS2-Q10: LLM=D  Human=B  |dist|=2
+    DS3-Q 1: LLM=C  Human=B  |dist|=1
+    DS3-Q10: LLM=D  Human=B  |dist|=2
+    DS4-Q 1: LLM=C  Human=A  |dist|=2
+    DS4-Q10: LLM=D  Human=B  |dist|=2
+
+  Opus 4.6:
+    DS1-Q 1: LLM=B  Human=A  |dist|=1
+    DS1-Q10: LLM=D  Human=B  |dist|=2
+    DS2-Q 1: LLM=B  Human=A  |dist|=1
+    DS2-Q10: LLM=D  Human=B  |dist|=2
+    DS3-Q 1: LLM=B  Human=B  |dist|=0
+    DS3-Q10: LLM=D  Human=B  |dist|=2
+    DS4-Q 1: LLM=B  Human=A  |dist|=1
+    DS4-Q10: LLM=D  Human=B  |dist|=2
+
+  GPT-5.2:
+    DS1-Q 1: LLM=B  Human=A  |dist|=1
+    DS1-Q10: LLM=D  Human=B  |dist|=2
+    DS2-Q 1: LLM=B  Human=A  |dist|=1
+    DS2-Q10: LLM=B  Human=B  |dist|=0
+    DS3-Q 1: LLM=B  Human=B  |dist|=0
+    DS3-Q10: LLM=D  Human=B  |dist|=2
+    DS4-Q 1: LLM=B  Human=A  |dist|=1
+    DS4-Q10: LLM=D  Human=B  |dist|=2
+
+  GPT-4.1:
+    DS1-Q 1: LLM=B  Human=A  |dist|=1
+    DS1-Q10: LLM=D  Human=B  |dist|=2
+    DS2-Q 1: LLM=B  Human=A  |dist|=1
+    DS2-Q10: LLM=D  Human=B  |dist|=2
+    DS3-Q 1: LLM=B  Human=B  |dist|=0
+    DS3-Q10: LLM=D  Human=B  |dist|=2
+    DS4-Q 1: LLM=B  Human=A  |dist|=1
+    DS4-Q10: LLM=D  Human=B  |dist|=2
+
+==============================================================================
+  PER-QUESTION MODAL DISTANCES  (Information, Edu-Low subgroup, first 10)
+==============================================================================
+
+  Sonnet 4.5:
+    DS1-Q 2: LLM=B  Human=A  |dist|=1
+    DS1-Q 3: LLM=A  Human=A  |dist|=0
+    DS1-Q 4: LLM=B  Human=?  |dist|=-
+    DS1-Q 5: LLM=C  Human=?  |dist|=-
+    DS1-Q 6: LLM=B  Human=B  |dist|=0
+    DS1-Q 7: LLM=B  Human=B  |dist|=0
+    DS1-Q 8: LLM=D  Human=?  |dist|=-
+    DS1-Q 9: LLM=B  Human=G  |dist|=-
+    DS2-Q 2: LLM=B  Human=C  |dist|=1
+    DS2-Q 3: LLM=B  Human=C  |dist|=1
+
+  Opus 4.6:
+    DS1-Q 2: LLM=B  Human=A  |dist|=1
+    DS1-Q 3: LLM=B  Human=A  |dist|=1
+    DS1-Q 4: LLM=B  Human=?  |dist|=-
+    DS1-Q 5: LLM=C  Human=?  |dist|=-
+    DS1-Q 6: LLM=B  Human=B  |dist|=0
+    DS1-Q 7: LLM=B  Human=B  |dist|=0
+    DS1-Q 8: LLM=D  Human=?  |dist|=-
+    DS1-Q 9: LLM=A  Human=G  |dist|=-
+    DS2-Q 2: LLM=C  Human=C  |dist|=0
+    DS2-Q 3: LLM=C  Human=C  |dist|=0
+
+  GPT-5.2:
+    DS1-Q 2: LLM=B  Human=A  |dist|=1
+    DS1-Q 3: LLM=A  Human=A  |dist|=0
+    DS1-Q 4: LLM=B  Human=?  |dist|=-
+    DS1-Q 5: LLM=C  Human=?  |dist|=-
+    DS1-Q 6: LLM=B  Human=B  |dist|=0
+    DS1-Q 7: LLM=B  Human=B  |dist|=0
+    DS1-Q 8: LLM=C  Human=?  |dist|=-
+    DS1-Q 9: LLM=A  Human=G  |dist|=-
+    DS2-Q 2: LLM=B  Human=C  |dist|=1
+    DS2-Q 3: LLM=C  Human=C  |dist|=0
+
+  GPT-4.1:
+    DS1-Q 2: LLM=B  Human=A  |dist|=1
+    DS1-Q 3: LLM=B  Human=A  |dist|=1
+    DS1-Q 4: LLM=B  Human=?  |dist|=-
+    DS1-Q 5: LLM=C  Human=?  |dist|=-
+    DS1-Q 6: LLM=A  Human=B  |dist|=1
+    DS1-Q 7: LLM=B  Human=B  |dist|=0
+    DS1-Q 8: LLM=D  Human=?  |dist|=-
+    DS1-Q 9: LLM=A  Human=G  |dist|=-
+    DS2-Q 2: LLM=B  Human=C  |dist|=1
+    DS2-Q 3: LLM=C  Human=C  |dist|=0
+
+==============================================================================
+  LATEX TABLE - Perception Modal MAE
+==============================================================================
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\caption{Distance-based alignment (Perception-based questions Q1, Q10; $n=8$). Modal MAE between LLM subgroup and corresponding human subgroup. Ordinal coding A\,=\,0\ldots E\,=\,4; lower is better.}
+\label{tab:perc-distance-alignment}
+\begin{tabular}{lcccccccc}
+\toprule
+\textbf{Model}
+& \multicolumn{2}{c}{\textbf{Education}}
+& \multicolumn{2}{c}{\textbf{Sex}}
+& \multicolumn{2}{c}{\textbf{Outpatient}}
+& \textbf{ED Visits}
+& \textbf{Max} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+& Low & High & Male & Female & Low & High & Low & \\
+\midrule
+Sonnet 4.5 & 1.62 & 0.75 & 0.75 & 0.62 & 0.75 & 0.88 & 0.62 & 4 \\
+Opus 4.6 & 1.38 & 1.25 & 1.12 & 1.12 & 1.00 & 0.38 & 1.00 & 4 \\
+GPT-5.2 & 1.12 & 1.25 & 0.88 & 0.50 & 0.75 & 1.00 & 0.88 & 4 \\
+GPT-4.1 & 1.38 & 1.12 & 1.25 & 0.62 & 0.88 & 1.12 & 1.12 & 4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+==============================================================================
+  LATEX TABLE - Perception Expected Absolute Distance
+==============================================================================
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\caption{Distribution-level alignment (Perception-based questions Q1, Q10; $n=8$). Expected absolute ordinal distance between LLM subgroup and human subgroup marginals.}
+\label{tab:perc-expdist-alignment}
+\begin{tabular}{lcccccccc}
+\toprule
+\textbf{Model}
+& \multicolumn{2}{c}{\textbf{Education}}
+& \multicolumn{2}{c}{\textbf{Sex}}
+& \multicolumn{2}{c}{\textbf{Outpatient}}
+& \textbf{ED Visits}
+& \textbf{Max} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+& Low & High & Male & Female & Low & High & Low & \\
+\midrule
+Sonnet 4.5 & 1.30 & 0.85 & 0.97 & 1.02 & 0.98 & 1.08 & 0.97 & 4 \\
+Opus 4.6 & 1.11 & 1.23 & 1.03 & 1.05 & 1.04 & 1.02 & 1.03 & 4 \\
+GPT-5.2 & 1.03 & 1.08 & 0.92 & 0.98 & 0.96 & 0.93 & 0.95 & 4 \\
+GPT-4.1 & 1.11 & 1.18 & 0.99 & 1.02 & 1.01 & 0.99 & 1.01 & 4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+==============================================================================
+  LATEX TABLE - Information Modal MAE
+==============================================================================
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\caption{Distance-based alignment (Information-based questions Q2--Q9; $n=32$). Modal MAE between LLM subgroup and corresponding human subgroup.}
+\label{tab:info-distance-alignment}
+\begin{tabular}{lcccccccc}
+\toprule
+\textbf{Model}
+& \multicolumn{2}{c}{\textbf{Education}}
+& \multicolumn{2}{c}{\textbf{Sex}}
+& \multicolumn{2}{c}{\textbf{Outpatient}}
+& \textbf{ED Visits}
+& \textbf{Max} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+& Low & High & Male & Female & Low & High & Low & \\
+\midrule
+Sonnet 4.5 & 1.20 & 1.06 & 1.21 & 1.00 & 1.25 & 1.00 & 1.14 & 4 \\
+Opus 4.6 & 0.72 & 0.68 & 0.68 & 0.57 & 0.86 & 0.57 & 0.69 & 4 \\
+GPT-5.2 & 0.88 & 0.65 & 0.71 & 0.68 & 0.86 & 0.71 & 0.62 & 4 \\
+GPT-4.1 & 1.00 & 0.90 & 0.75 & 0.71 & 0.79 & 0.79 & 0.76 & 4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+==============================================================================
+  LATEX TABLE - Information Expected Absolute Distance
+==============================================================================
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\caption{Distribution-level alignment (Information-based questions Q2--Q9; $n=32$). Expected absolute ordinal distance between LLM subgroup and human subgroup marginals.}
+\label{tab:info-expdist-alignment}
+\begin{tabular}{lcccccccc}
+\toprule
+\textbf{Model}
+& \multicolumn{2}{c}{\textbf{Education}}
+& \multicolumn{2}{c}{\textbf{Sex}}
+& \multicolumn{2}{c}{\textbf{Outpatient}}
+& \textbf{ED Visits}
+& \textbf{Max} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+& Low & High & Male & Female & Low & High & Low & \\
+\midrule
+Sonnet 4.5 & 0.95 & 1.01 & 1.05 & 1.00 & 1.11 & 0.98 & 1.07 & 4 \\
+Opus 4.6 & 0.69 & 0.76 & 0.81 & 0.75 & 0.86 & 0.74 & 0.81 & 4 \\
+GPT-5.2 & 0.80 & 0.78 & 0.86 & 0.78 & 0.89 & 0.82 & 0.86 & 4 \\
+GPT-4.1 & 0.85 & 0.89 & 0.93 & 0.89 & 0.96 & 0.93 & 0.96 & 4 \\
+\bottomrule
+\end{tabular}
+\end{table}

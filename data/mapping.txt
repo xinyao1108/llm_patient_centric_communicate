@@ -1,0 +1,255 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue255;\red0\green0\blue0;\red144\green1\blue18;
+}
+{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;\cssrgb\c63922\c8235\c8235;
+}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs28 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 mappings = \{\cb1 \
+\cb2     \cf4 \strokec4 'Q6'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Very Clear'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Somewhat Clear'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Not Clear At All'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q7'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Yes'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Not Provided'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q8'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Yes'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Not Provided'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q9'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Yes'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "It doesn't have"\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q10'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Yes'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "It doesn't have"\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q11'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'stomach disease'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'ulcer in the duodenum'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q12'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Nothing'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'take a new medication'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'see a doctor again'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'D'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q13'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Avoid fruit'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Avoid strenuous exercise'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Other (please specify):'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'D'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q14'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Medication schedule'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Follow-up appointments'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Symptoms to watch for'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Dietary restrictions'\cf0 \strokec3 : \cf4 \strokec4 'D'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Activity limitations'\cf0 \strokec3 : \cf4 \strokec4 'E'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Other (please specify):'\cf0 \strokec3 : \cf4 \strokec4 'F'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "No"\cf0 \strokec3 : \cf4 \strokec4 'G'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q15'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Extremely easy'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Somewhat easy'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Neither easy nor difficult'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Somewhat difficult'\cf0 \strokec3 : \cf4 \strokec4 'D'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Extremely difficult'\cf0 \strokec3 : \cf4 \strokec4 'E'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q17'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Fully understand'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Partially understand'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "Can't understand"\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q18'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Yes'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Not Provided'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q19'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Yes'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Not Provided'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q20'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Yes'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Not Provided'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q21'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Yes'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Not Provided'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q22'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Medication schedule'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Follow-up appointments'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Symptoms to watch for'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Dietary restrictions'\cf0 \strokec3 : \cf4 \strokec4 'D'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Activity limitations'\cf0 \strokec3 : \cf4 \strokec4 'E'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Other (please specify):'\cf0 \strokec3 : \cf4 \strokec4 'F'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "No"\cf0 \strokec3 : \cf4 \strokec4 'G'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q23'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Fever > 101'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Chest Pain'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Stomach Pain / diarrhea'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Shorten of breath'\cf0 \strokec3 : \cf4 \strokec4 'D'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'All of the above'\cf0 \strokec3 : \cf4 \strokec4 'E'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'F'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q24'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Nothing'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Swimming in 4 weeks'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Consuming narcotics without stool softeners'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Driving while under influence of narcotics'\cf0 \strokec3 : \cf4 \strokec4 'D'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Comsuming Alcohol'\cf0 \strokec3 : \cf4 \strokec4 'E'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'F'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q25'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Nothing'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Take stool softeners'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Drive back home as soon as possible'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'D'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q26'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Extremely easy'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Somewhat easy'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Neither easy nor difficult'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Somewhat difficult'\cf0 \strokec3 : \cf4 \strokec4 'D'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Extremely difficult'\cf0 \strokec3 : \cf4 \strokec4 'E'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q28'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Fully understand'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Partially understand'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "Can't understand"\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q29'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Yes'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Not Provided'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q30'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Yes'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Not Provided'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q31'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Yes'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Not Provided'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q32'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Yes'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Not Provided'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q33'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'stomach disease'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'ulcer in the duodenum'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'keep splint'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'wearing tegaderm'\cf0 \strokec3 : \cf4 \strokec4 'D'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'E'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q34'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'take a new medication'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'see a doctor again'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'non-weight-bearing left lower extremity'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Nothing'\cf0 \strokec3 : \cf4 \strokec4 'D'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'E'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q35'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Avoid fruit'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Avoid strenuous exercise'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Other (please specify):'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'D'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q36'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Medication schedule'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Follow-up appointments'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Symptoms to watch for'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Dietary restrictions'\cf0 \strokec3 : \cf4 \strokec4 'D'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Activity limitations'\cf0 \strokec3 : \cf4 \strokec4 'E'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Other (please specify):'\cf0 \strokec3 : \cf4 \strokec4 'F'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "No"\cf0 \strokec3 : \cf4 \strokec4 'G'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q37'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Extremely easy'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Somewhat easy'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Neither easy nor difficult'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Somewhat difficult'\cf0 \strokec3 : \cf4 \strokec4 'D'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Extremely difficult'\cf0 \strokec3 : \cf4 \strokec4 'E'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q39'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Fully understand'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Partially understand'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "Can't understand"\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q40'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Yes'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Not Provided'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q41'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Yes'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Not Provided'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q42'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Yes'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Not Provided'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q43'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Yes'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Not Provided'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q44'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'stomach disease'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'ulcer in the duodenum'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'keep splint'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'wearing tegaderm'\cf0 \strokec3 : \cf4 \strokec4 'D'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'E'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q45'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Nothing'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'take a new medication'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'see a doctor again'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'D'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q46'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Avoid fruit'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Avoid strenuous exercise'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Avoid heary lifting'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Other (please specify):'\cf0 \strokec3 : \cf4 \strokec4 'D'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "I don't know"\cf0 \strokec3 : \cf4 \strokec4 'E'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q47'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Medication schedule'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Follow-up appointments'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Symptoms to watch for'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Dietary restrictions'\cf0 \strokec3 : \cf4 \strokec4 'D'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Activity limitations'\cf0 \strokec3 : \cf4 \strokec4 'E'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Other (please specify):'\cf0 \strokec3 : \cf4 \strokec4 'F'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 "No"\cf0 \strokec3 : \cf4 \strokec4 'G'\cf0 \cb1 \strokec3 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 'Q48'\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 'Extremely easy'\cf0 \strokec3 : \cf4 \strokec4 'A'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Somewhat easy'\cf0 \strokec3 : \cf4 \strokec4 'B'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Neither easy nor difficult'\cf0 \strokec3 : \cf4 \strokec4 'C'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Somewhat difficult'\cf0 \strokec3 : \cf4 \strokec4 'D'\cf0 \strokec3 ,\cb1 \
+\cb2         \cf4 \strokec4 'Extremely difficult'\cf0 \strokec3 : \cf4 \strokec4 'E'\cf0 \cb1 \strokec3 \
+\cb2     \}}

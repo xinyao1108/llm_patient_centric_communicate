@@ -1,0 +1,21 @@
+Parsing mapping...
+Loading human sex-stratified perception majorities...
+
+  DS                         Sonnet 4.5     Opus 4.6      GPT-5.2      GPT-4.1
+
+DS Type                    Sonnet 4.5     Opus 4.6      GPT-5.2      GPT-4.1
+----------------------------------------------------------------------------
+DS1: Short & Difficult          +0.50        +0.00        +0.50        +0.50
+DS2: Long & Simple              +0.00        +0.00        +0.00        +0.00
+DS3: Long & Difficult           +0.50        -0.50        +1.50        +1.00
+DS4: Short & Simple             -0.50        +0.50        -0.50        +1.00
+----------------------------------------------------------------------------
+Overall (Male-Female)          +0.125       +0.000       +0.375       +0.625
+
+% Paste into tab:ds-sex-gap-perc:
+DS1: Short \& Difficult & +0.50 &  0.00 & +0.50 & +0.50 \\
+DS2: Long \& Simple &  0.00 &  0.00 &  0.00 &  0.00 \\
+DS3: Long \& Difficult & +0.50 & $-$0.50 & +1.50 & +1.00 \\
+DS4: Short \& Simple & $-$0.50 & +0.50 & $-$0.50 & +1.00 \\
+\midrule
+Overall                 & +0.12 &  0.00 & +0.38 & +0.62 \\

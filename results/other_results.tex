@@ -1,0 +1,219 @@
+\subsection{Distributional Alignment With Humans}
+
+Table~\ref{tab:ks} presents 2-sample Kolmogorov-Smirnov (K-S) tests comparing
+pooled LLM response distributions against human responses on the ordinal scale,
+stratified by question type. Given the large sample sizes (model: 15,000--60,000;
+human: 586--1373), all $P$ values were highly significant; the supremum
+statistic $D$ was therefore used as the ranking criterion.
+
+For perception questions, GPT-5.2 achieved the closest distributional match to
+humans ($D$=0.070; $P$=.008), followed by GPT-4.1 ($D$=0.093).
+Sonnet~4.5 was the most distributionally distant ($D$=0.324).
+For information questions, Opus~4.6 was closest ($D$=0.131)
+and Sonnet~4.5 again farthest ($D$=0.221).
+
+The within-human split-half baseline ($D$$\approx$0.045 for perception;
+$D$$\approx$0.028 for information; mean $P$$\approx$.82) represents
+the intrinsic noise floor. \textbf{No model reached this floor}: even the
+best-performing model (GPT-5.2 on perception, $D$=0.070) exceeded the
+human baseline by a factor of approximately 1.5, indicating meaningful
+headroom for future improvements.
+
+% ---------- Table 8: Kolmogorov-Smirnov ----------
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\caption{Two-sample Kolmogorov--Smirnov tests comparing pooled LLM response distributions against human responses on ordinal encoding (A{=}0$\ldots$E{=}4). $D$ is the supremum CDF difference; small $p$ indicates distributional mismatch.}
+\label{tab:ks}
+\begin{tabular}{llrrrr}
+\toprule
+\textbf{Type} & \textbf{Model} & $n_{\text{LLM}}$ & $n_{\text{Hum}}$ & $D$ & $p$ \\
+\midrule
+Perception & Sonnet 4.5 & 15360 & 586 & 0.3239 & $3.61\times 10^{-53}$ \\
+ & Opus 4.6 & 15360 & 586 & 0.1357 & $1.60\times 10^{-9}$ \\
+ & GPT-5.2 & 15360 & 586 & 0.0699 & 0.0077 \\
+ & GPT-4.1 & 15360 & 586 & 0.0925 & 0.0001 \\
+ & \textit{Human (split-half)} & --- & --- & 0.0454 & 0.8172 \\
+\midrule
+Information & Sonnet 4.5 & 57880 & 1373 & 0.2207 & $7.57\times 10^{-58}$ \\
+ & Opus 4.6 & 60077 & 1373 & 0.1310 & $1.54\times 10^{-20}$ \\
+ & GPT-5.2 & 58981 & 1373 & 0.1624 & $2.19\times 10^{-31}$ \\
+ & GPT-4.1 & 59152 & 1373 & 0.1428 & $2.47\times 10^{-24}$ \\
+ & \textit{Human (split-half)} & --- & --- & 0.0278 & 0.8235 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\subsection{Stability of Estimates Across $N$=10 Iterations}
+
+Table~\ref{tab:stability} reports the mean, SD, and standard error of the mean
+(SEM) computed over the 10 independent iterations per model. SEM values were
+uniformly small (all $\le$0.017; most $<$0.005), confirming that the
+10-iteration average is a stable estimator of each model's expected behavior.
+EAD exhibited approximately an order of magnitude lower variance than modal
+MAE, consistent with EAD being a smooth functional of the response distribution
+whereas modal MAE is a discrete plug-in statistic sensitive to mode flips.
+
+% ---------- Table 7: Stability (Mean / SD / SEM) ----------
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\caption{Stability metrics over $N$=10 iterations per model. Lower is better for all columns. Modal MAE and EAD are averaged over the 7 matched subgroups.}
+\label{tab:stability}
+\begin{tabular}{llrrrr}
+\toprule
+\textbf{Metric} & \textbf{Type} & \textbf{Model} & \textbf{Mean} & \textbf{SD} & \textbf{SEM} \\
+\midrule
+ModalMAE & Perception & Sonnet 4.5 & 0.854 & 0.011 & 0.004 \\
+ &  & Opus 4.6 & 1.032 & 0.008 & 0.002 \\
+ &  & GPT-5.2 & 0.895 & 0.013 & 0.004 \\
+ &  & GPT-4.1 & 0.973 & 0.052 & 0.016 \\
+\cmidrule(lr){2-6}
+ & Information & Sonnet 4.5 & 1.123 & 0.010 & 0.003 \\
+ &  & Opus 4.6 & 0.678 & 0.006 & 0.002 \\
+ &  & GPT-5.2 & 0.740 & 0.013 & 0.004 \\
+ &  & GPT-4.1 & 0.810 & 0.012 & 0.004 \\
+\cmidrule(lr){2-6}
+EAD & Perception & Sonnet 4.5 & 1.024 & 0.004 & 0.001 \\
+ &  & Opus 4.6 & 1.074 & 0.002 & 0.000 \\
+ &  & GPT-5.2 & 0.979 & 0.003 & 0.001 \\
+ &  & GPT-4.1 & 1.043 & 0.003 & 0.001 \\
+\cmidrule(lr){2-6}
+ & Information & Sonnet 4.5 & 1.024 & 0.003 & 0.001 \\
+ &  & Opus 4.6 & 0.772 & 0.001 & 0.000 \\
+ &  & GPT-5.2 & 0.826 & 0.006 & 0.002 \\
+ &  & GPT-4.1 & 0.917 & 0.003 & 0.001 \\
+\midrule
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\subsection{Normality Assessment}
+
+Table~\ref{tab:shapiro} reports Shapiro-Wilk normality tests on the 10
+per-iteration scores for each model. EAD scores satisfied the normality
+assumption across all 4 models and both question types ($P$>.17),
+supporting the use of parametric analysis of variance (ANOVA). Modal MAE
+scores on perception questions violated normality for Sonnet~4.5
+($W$=0.37; $P$<.001) and Opus~4.6 ($W$=0.51; $P$<.001);
+ANOVA results for this metric-type combination should therefore be interpreted
+with caution.
+
+% ---------- Table 8: Shapiro-Wilk Normality ----------
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\caption{Shapiro--Wilk normality test on the $N{=}10$ per-iteration scores for each model. $p > 0.05$ fails to reject normality (parametric tests appropriate).}
+\label{tab:shapiro}
+\begin{tabular}{llrrl}
+\toprule
+\textbf{Metric} & \textbf{Type} & \textbf{Model} & $W$ & $p$ \\
+\midrule
+ModalMAE & Perception & Sonnet 4.5 & 0.3657 & $1.00\times 10^{-7}$ \\
+ &  & Opus 4.6 & 0.5093 & $4.67\times 10^{-6}$ \\
+ &  & GPT-5.2 & 0.8325 & 0.0359 \\
+ &  & GPT-4.1 & 0.9028 & 0.2354 \\
+\cmidrule(lr){2-5}
+ & Information & Sonnet 4.5 & 0.9111 & 0.2889 \\
+ &  & Opus 4.6 & 0.9103 & 0.2833 \\
+ &  & GPT-5.2 & 0.8960 & 0.1979 \\
+ &  & GPT-4.1 & 0.8837 & 0.1440 \\
+\cmidrule(lr){2-5}
+EAD & Perception & Sonnet 4.5 & 0.9615 & 0.8030 \\
+ &  & Opus 4.6 & 0.8924 & 0.1804 \\
+ &  & GPT-5.2 & 0.9542 & 0.7187 \\
+ &  & GPT-4.1 & 0.9490 & 0.6562 \\
+\cmidrule(lr){2-5}
+ & Information & Sonnet 4.5 & 0.9254 & 0.4040 \\
+ &  & Opus 4.6 & 0.9845 & 0.9846 \\
+ &  & GPT-5.2 & 0.9612 & 0.7997 \\
+ &  & GPT-4.1 & 0.9113 & 0.2901 \\
+\midrule
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Inter-Model Comparison}
+
+Table~\ref{tab:anova} reports one-way ANOVA across the 4 models (degrees of
+freedom: 3, 36). All 4 metric-type combinations yielded highly significant
+omnibus $F$ statistics ($F$$\ge$83; all $P$<$10^{-15}$), confirming
+that the models differed significantly in their alignment performance.
+
+Post hoc pairwise comparisons using Tukey honestly significant difference (HSD)
+tests are shown in Table~\ref{tab:tukey}. A consistent pattern emerged:
+
+\begin{itemize}\itemsep2pt
+\item \textbf{Information-based questions:} Opus~4.6 statistically outperformed
+  all other models on both modal MAE and EAD ($P_{\text{adj}}$<.001 for all
+  comparisons), followed by GPT-5.2, GPT-4.1, and Sonnet~4.5 (ranked last).
+\item \textbf{Perception-based questions:} GPT-5.2 achieved the lowest EAD
+  (significantly better than all competitors), whereas Sonnet~4.5 achieved the
+  lowest modal MAE. This discrepancy suggests that Sonnet~4.5 identifies the
+  correct modal response but allocates probability mass less faithfully across
+  the ordinal scale than GPT-5.2.
+\end{itemize}
+
+% ---------- Table 10: One-Way ANOVA ----------
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{5pt}
+\caption{One-way ANOVA across the four models (each with $N{=}10$ iteration scores). A significant $p$ indicates that at least one model differs from the others.}
+\label{tab:anova}
+\begin{tabular}{llrr}
+\toprule
+\textbf{Metric} & \textbf{Type} & $F(3,36)$ & $p$ \\
+\midrule
+ModalMAE & Perception & 83.044 & $3.05\times 10^{-16}$ \\
+ModalMAE & Information & 3601.324 & $1.18\times 10^{-44}$ \\
+EAD & Perception & 1600.066 & $2.40\times 10^{-38}$ \\
+EAD & Information & 8166.188 & $4.85\times 10^{-51}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+% ---------- Table 11: Tukey HSD Post Hoc ----------
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\caption{Tukey HSD post-hoc pairwise comparisons between models (family-wise $\alpha{=}0.05$). Negative `meandiff' means Model\,1 has a lower (better) score than Model\,2. Reject indicates a statistically significant difference.}
+\label{tab:tukey}
+\begin{tabular}{llllrrl}
+\toprule
+\textbf{Metric} & \textbf{Type} & \textbf{Model 1} & \textbf{Model 2} & \textbf{meandiff} & $p_{\text{adj}}$ & \textbf{Reject} \\
+\midrule
+ModalMAE & Perception & GPT-4.1 & GPT-5.2 & -0.079 & $<10^{-16}$ & \textbf{Yes} \\
+ &  & GPT-4.1 & Opus 4.6 & 0.059 & 0.0002 & \textbf{Yes} \\
+ &  & GPT-4.1 & Sonnet 4.5 & -0.120 & $<10^{-16}$ & \textbf{Yes} \\
+ &  & GPT-5.2 & Opus 4.6 & 0.138 & $<10^{-16}$ & \textbf{Yes} \\
+ &  & GPT-5.2 & Sonnet 4.5 & -0.041 & 0.0108 & \textbf{Yes} \\
+ &  & Opus 4.6 & Sonnet 4.5 & -0.179 & $<10^{-16}$ & \textbf{Yes} \\
+\cmidrule(lr){2-7}
+ & Information & GPT-4.1 & GPT-5.2 & -0.070 & $<10^{-16}$ & \textbf{Yes} \\
+ &  & GPT-4.1 & Opus 4.6 & -0.133 & $<10^{-16}$ & \textbf{Yes} \\
+ &  & GPT-4.1 & Sonnet 4.5 & 0.312 & $<10^{-16}$ & \textbf{Yes} \\
+ &  & GPT-5.2 & Opus 4.6 & -0.063 & $<10^{-16}$ & \textbf{Yes} \\
+ &  & GPT-5.2 & Sonnet 4.5 & 0.382 & $<10^{-16}$ & \textbf{Yes} \\
+ &  & Opus 4.6 & Sonnet 4.5 & 0.445 & $<10^{-16}$ & \textbf{Yes} \\
+\cmidrule(lr){2-7}
+EAD & Perception & GPT-4.1 & GPT-5.2 & -0.064 & $<10^{-16}$ & \textbf{Yes} \\
+ &  & GPT-4.1 & Opus 4.6 & 0.030 & $<10^{-16}$ & \textbf{Yes} \\
+ &  & GPT-4.1 & Sonnet 4.5 & -0.019 & $<10^{-16}$ & \textbf{Yes} \\
+ &  & GPT-5.2 & Opus 4.6 & 0.094 & $<10^{-16}$ & \textbf{Yes} \\
+ &  & GPT-5.2 & Sonnet 4.5 & 0.045 & $<10^{-16}$ & \textbf{Yes} \\
+ &  & Opus 4.6 & Sonnet 4.5 & -0.049 & $<10^{-16}$ & \textbf{Yes} \\
+\cmidrule(lr){2-7}
+ & Information & GPT-4.1 & GPT-5.2 & -0.090 & $<10^{-16}$ & \textbf{Yes} \\
+ &  & GPT-4.1 & Opus 4.6 & -0.144 & $<10^{-16}$ & \textbf{Yes} \\
+ &  & GPT-4.1 & Sonnet 4.5 & 0.107 & $<10^{-16}$ & \textbf{Yes} \\
+ &  & GPT-5.2 & Opus 4.6 & -0.054 & $<10^{-16}$ & \textbf{Yes} \\
+ &  & GPT-5.2 & Sonnet 4.5 & 0.197 & $<10^{-16}$ & \textbf{Yes} \\
+ &  & Opus 4.6 & Sonnet 4.5 & 0.251 & $<10^{-16}$ & \textbf{Yes} \\
+\midrule
+\bottomrule
+\end{tabular}
+\end{table}
