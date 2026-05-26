@@ -74,38 +74,11 @@ for ds, qs in DS_BLOCKS.items():
 DEMO_COL_SET = set(DEMO_COLS.keys())
 
 
-def parse_mapping_from_rtf(path: Path) -> dict[str, dict[str, str]]:
-    """Parse the RTF mapping file and return {question_id: {text_value: letter}}."""
-    raw = path.read_text(encoding="utf-8", errors="replace")
-
-    # Strip RTF control words and formatting, remove braces
-    clean = re.sub(r"\\[a-zA-Z]+[\d]*\s?", " ", raw)
-    clean = re.sub(r"\\['\-]", "", clean)
-    clean = re.sub(r"[{}]", "", clean)
-    clean = re.sub(r"\s+", " ", clean).strip()
-
-    mappings: dict[str, dict[str, str]] = {}
-
-    # Find positions of all 'Qnn' tokens
-    q_positions = list(re.finditer(r"'(Q\d+)'\s*:", clean))
-
-    for i, q_match in enumerate(q_positions):
-        qid = q_match.group(1)
-        start = q_match.end()
-        end = q_positions[i + 1].start() if i + 1 < len(q_positions) else len(clean)
-        block = clean[start:end]
-
-        # Extract 'text' : 'Letter' pairs where Letter is a single A-G
-        kv_pattern = re.compile(r"""['"]([^'"]+)['"]\s*:\s*['"]([A-G])['"]""")
-        text_to_letter = {}
-        for kv_match in kv_pattern.finditer(block):
-            text_val = kv_match.group(1).strip()
-            letter = kv_match.group(2)
-            text_to_letter[text_val] = letter
-        if text_to_letter:
-            mappings[qid] = text_to_letter
-
-    return mappings
+# Re-export the canonical parser so this script does not drift from
+# compute_distance_alignment.py.  See that module for the implementation
+# and the rationale for the kv regex (apostrophe-containing keys are wrapped
+# in double quotes; the regex must therefore accept either outer quote).
+from compute_distance_alignment import parse_mapping_from_rtf  # noqa: E402
 
 
 def classify_frequency(freq: str) -> str:

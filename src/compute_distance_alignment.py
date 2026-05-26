@@ -94,6 +94,13 @@ def classify_freq(raw: Optional[str]) -> Optional[str]:
 # ---------------------------------------------------------------------------
 
 def parse_mapping_from_rtf(path: Path) -> Dict[str, Dict[str, str]]:
+    """Parse the RTF mapping file into ``{Qid: {option_text: letter}}``.
+
+    The mapping mixes single-quoted keys (``'Avoid fruit'``) with
+    double-quoted keys (``"I don't know"``) so that option texts containing
+    apostrophes can be encoded.  The key/value regex must therefore accept
+    matching outer-quote pairs and tolerate the opposite quote inside.
+    """
     raw = path.read_text(encoding="utf-8", errors="replace")
     clean = re.sub(r"\\[a-zA-Z]+[\d]*\s?", " ", raw)
     clean = re.sub(r"\\['\-]", "", clean)
@@ -102,13 +109,20 @@ def parse_mapping_from_rtf(path: Path) -> Dict[str, Dict[str, str]]:
 
     mappings: Dict[str, Dict[str, str]] = {}
     q_positions = list(re.finditer(r"'(Q\d+)'\s*:", clean))
+    # Accept keys wrapped in '...' (no internal singles) OR "..." (no internal
+    # doubles); values are always a single letter wrapped in either quote.
+    kv = re.compile(
+        r"""(?:'([^']+)'|"([^"]+)")\s*:\s*['"]([A-G])['"]"""
+    )
     for i, m in enumerate(q_positions):
         qid = m.group(1)
         start = m.end()
         end = q_positions[i + 1].start() if i + 1 < len(q_positions) else len(clean)
         block = clean[start:end]
-        kv = re.compile(r"""['"]([^'"]+)['"]\s*:\s*['"]([A-G])['"]""")
-        t2l = {kv_m.group(1).strip(): kv_m.group(2) for kv_m in kv.finditer(block)}
+        t2l: Dict[str, str] = {}
+        for kv_m in kv.finditer(block):
+            key = (kv_m.group(1) or kv_m.group(2)).strip()
+            t2l[key] = kv_m.group(3)
         if t2l:
             mappings[qid] = t2l
     return mappings
