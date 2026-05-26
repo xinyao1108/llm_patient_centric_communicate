@@ -1,0 +1,18 @@
+========================================================================
+  WITHIN-GROUP PAIRWISE AGREEMENT (A-D restriction, multi-select aware)
+========================================================================
+
+Group            N   Overall     Info   Percep
+Male            35     58.8%    63.4%    40.2%
+Female          58     58.1%    63.4%    38.0%
+Non-binary       6     63.5%    68.9%    44.6%
+Edu-Low         49     59.8%    65.5%    39.2%
+Edu-High        50     58.9%    64.1%    38.2%
+
+--- Cross-group plurality (A-D, alphabetical tie-break) ---
+Male vs Female: 34/40 agree (85.0%); 0 excluded.
+  Disagreements: [('Q6', 'A', 'B'), ('Q13', 'B', 'A'), ('Q14', 'D', 'C'), ('Q28', 'A', 'B'), ('Q37', 'B', 'D'), ('Q39', 'B', 'A')]
+Edu-Low vs Edu-High: 31/37 agree (83.8%); 3 excluded.
+  Disagreements: [('Q6', 'A', 'B'), ('Q14', 'C', 'D'), ('Q24', 'D', 'B'), ('Q28', 'A', 'B'), ('Q37', 'B', 'D'), ('Q48', 'B', 'D')]
+
+Wrote /Users/maxinyao/Desktop/llm_persona/addtional_experiment/github_release/results/human_agreement_tables.tex
