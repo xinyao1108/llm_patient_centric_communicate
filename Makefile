@@ -13,8 +13,10 @@ DATA_CSVS   = data/responses_long.csv data/ds_edu_distributions.csv
 TXT_LOGS    = results/human_response_summary.txt \
               results/alignment_subgroup_summary.txt \
               results/robustness_hs_only.txt \
-              results/per_ds_sex_gap.txt
-AUTO_TEX    = results/auto_alignment_tables.tex
+              results/per_ds_sex_gap.txt \
+              results/human_entropy.txt
+AUTO_TEX    = results/auto_alignment_tables.tex \
+              results/human_entropy_tables.tex
 PLOTS       = results/violin_plot_overall.png \
               results/violin_plot_by_type.png \
               results/violin_plot_by_subgroup_perception.png \
@@ -52,8 +54,11 @@ results/robustness_hs_only.txt: src/compute_robustness_hs_only.py src/compute_di
 results/per_ds_sex_gap.txt: src/compute_per_ds_sex_gap.py src/compute_distance_alignment.py
 	cd src && $(PYTHON) compute_per_ds_sex_gap.py > ../$@
 
-$(AUTO_TEX): src/statistical_analysis.py src/compute_distance_alignment.py
+results/auto_alignment_tables.tex: src/statistical_analysis.py src/compute_distance_alignment.py
 	cd src && $(PYTHON) statistical_analysis.py
+
+results/human_entropy.txt results/human_entropy_tables.tex: src/compute_human_entropy.py results/human_response_summary.txt
+	cd src && $(PYTHON) compute_human_entropy.py > ../results/human_entropy.txt
 
 # ---------- Stage 3: R figures (depend on CSVs) ----------
 figures: data $(PLOTS)

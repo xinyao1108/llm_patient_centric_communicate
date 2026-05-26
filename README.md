@@ -21,6 +21,7 @@ summary comprehension questions, against human survey responses.
 │   ├── statistical_analysis.py            Stability / KS / ANOVA / Tukey + LaTeX tables
 │   ├── compute_robustness_hs_only.py      Result 2 - HS-or-Less vs merged Low robustness check
 │   ├── compute_per_ds_sex_gap.py          Result 8 - per-DS sex gap on perception modal MAE
+│   ├── compute_human_entropy.py           tab:human-gender-dist + tab:human-edu-dist (Shannon entropy)
 │   ├── export_responses_long.py           Builds data/responses_long.csv (for violin plots)
 │   └── export_ds_edu_distributions.py     Builds data/ds_edu_distributions.csv (for Figs 1-3)
 ├── R/                                     R: figure rendering

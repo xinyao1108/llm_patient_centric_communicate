@@ -1,0 +1,16 @@
+========================================================================
+  HUMAN RESPONSE ENTROPY (pooled across all questions)
+========================================================================
+
+Gender
+                   n     A%    B%    C%    D%    E%  F/G%   H(AE)  Hn(AE)   H(AD)  Hn(AD)
+Female          1888  23.7 24.3 35.6 11.5  4.9   1.8   2.090   0.900   1.902   0.951
+Male            1094  25.8 26.9 31.8 11.4  4.0   2.6   2.084   0.898   1.918   0.959
+Non-binary       180  26.0 24.3 37.3  9.0  3.4   1.7   2.011   0.866   1.860   0.930
+
+Education
+                   n     A%    B%    C%    D%    E%  F/G%   H(AE)  Hn(AE)   H(AD)  Hn(AD)
+Low             1524  24.9 25.5 35.0 10.6  4.0   2.6   2.060   0.887   1.895   0.947
+High            1638  24.2 24.9 33.8 12.1  5.0   1.5   2.107   0.908   1.918   0.959
+
+Wrote /Users/maxinyao/Desktop/llm_persona/addtional_experiment/github_release/results/human_entropy_tables.tex
