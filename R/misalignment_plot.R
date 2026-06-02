@@ -8,30 +8,30 @@ suppressPackageStartupMessages({
 })
 
 # ---------------------------------------------------------------------------
-# Data from Table 10 (hardcoded to match exact values)
+# Data from Table 10 (hardcoded to match exact values; multi-select aware)
 # ---------------------------------------------------------------------------
 rows <- list(
-  list(q="DS2-Q7\nMedications", dist=3,
-       hA=0.33, hB=0, hC=0, hD=0.33, hE=0.33,
-       lA=0, lB=0.40, lC=0.11, lD=0.48, lE=0),
-  list(q="DS4-Q7\nMedications", dist=3,
-       hA=0.54, hB=0, hC=0.41, hD=0, hE=0.05,
-       lA=0, lB=0, lC=0.35, lD=0.65, lE=0),
-  list(q="DS1-Q5\nTest results", dist=2,
-       hA=1.00, hB=0, hC=0, hD=0, hE=0,
-       lA=0, lB=0.08, lC=0.92, lD=0, lE=0),
-  list(q="DS3-Q5\nTest results", dist=2,
-       hA=0.45, hB=0, hC=0.55, hD=0, hE=0,
-       lA=1.00, lB=0, lC=0, lD=0, lE=0),
-  list(q="DS4-Q5\nTest results", dist=2,
-       hA=0.12, hB=0, hC=0.88, hD=0, hE=0,
-       lA=1.00, lB=0, lC=0, lD=0, lE=0),
-  list(q="DS1-Q8\nFollow-up", dist=2,
-       hA=0.40, hB=0.40, hC=0, hD=0.20, hE=0,
-       lA=0, lB=0, lC=0.35, lD=0.65, lE=0),
-  list(q="DS3-Q8\nFollow-up", dist=2,
-       hA=0, hB=0.58, hC=0.42, hD=0, hE=0,
-       lA=0, lB=0.13, lC=0.08, lD=0.79, lE=0)
+  list(q="DS2-Q6\nWhen to call doctor", dist=4,
+       hA=0.34, hB=0.33, hC=0.00, hD=0.32, hE=0.00,
+       lA=0.00, lB=0.00, lC=0.00, lD=0.00, lE=1.00),
+  list(q="DS1-Q9\nDischarge plan coverage", dist=2,
+       hA=0.19, hB=0.12, hC=0.22, hD=0.22, hE=0.20,
+       lA=0.00, lB=0.71, lC=0.00, lD=0.29, lE=0.00),
+  list(q="DS2-Q7\nActivities prohibited", dist=2,
+       hA=0.00, hB=0.41, hC=0.21, hD=0.37, hE=0.01,
+       lA=0.00, lB=0.40, lC=0.11, lD=0.48, lE=0.00),
+  list(q="DS2-Q9\nDischarge plan coverage", dist=2,
+       hA=0.30, hB=0.22, hC=0.09, hD=0.16, hE=0.11,
+       lA=0.00, lB=0.06, lC=0.40, lD=0.37, lE=0.17),
+  list(q="DS3-Q5\nTest results identified", dist=2,
+       hA=0.40, hB=0.10, hC=0.50, hD=0.00, hE=0.00,
+       lA=1.00, lB=0.00, lC=0.00, lD=0.00, lE=0.00),
+  list(q="DS3-Q9\nDischarge plan coverage", dist=2,
+       hA=0.20, hB=0.14, hC=0.24, hD=0.10, hE=0.21,
+       lA=0.00, lB=0.00, lC=0.39, lD=0.00, lE=0.61),
+  list(q="DS4-Q5\nTest results identified", dist=2,
+       hA=0.11, hB=0.09, hC=0.80, hD=0.00, hE=0.00,
+       lA=1.00, lB=0.00, lC=0.00, lD=0.00, lE=0.00)
 )
 
 # Build long-format data frame

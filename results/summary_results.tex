@@ -442,14 +442,16 @@ patient-centric communication.
 
 \subsection{Per-Question Misalignment Analysis: Sonnet 4.5 on Information Questions}
 
-Sonnet~4.5 exhibited the worst alignment on information-based questions across
-all metrics (modal MAE\,$=$\,1.12; EAD\,$=$\,1.02; K-S $D$\,$=$\,0.221).
+Sonnet~4.5 exhibited the worst alignment on information-based questions
+across all metrics (modal MAE\,$=$\,0.90; EAD\,$=$\,0.92; K-S $D$\,$=$\,0.221).
 To understand the mechanisms driving this misalignment, we examined all 32
 information questions (4 DS $\times$ 8 questions) at the per-question level,
 comparing Sonnet~4.5's pooled modal response against the human pooled modal
 response. Table~\ref{tab:misalignment-summary} summarizes the degree of
 misalignment; Table~\ref{tab:misalignment-detail} presents the 7 worst-aligned
-questions with full response distributions.
+questions with full response distributions. For multi-select questions
+(check-all-that-apply), each chosen option contributes one vote so the
+reported distributions reflect overall option-selection prevalence.
 
 % ---------- Table 9: Misalignment Summary ----------
 \begin{table}[htbp]
@@ -464,10 +466,9 @@ modal response.}
 \toprule
 \textbf{Modal Distance} & \textbf{Count} & \textbf{\%} \\
 \midrule
-0 (perfect match)     &  4 & 12.5 \\
-1 (off by one)        & 17 & 53.1 \\
+0 (perfect match)       & 11 & 34.4 \\
+1 (off by one)          & 14 & 43.8 \\
 2+ (off by two or more) &  7 & 21.9 \\
-Non-ordinal (option G)  &  4 & 12.5 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -488,20 +489,20 @@ $n$$\approx$7{,}680 pooled across 10 iterations and all personas.}
 & \textbf{Hum} & \textbf{LLM} & \textbf{Dist}
 & \textbf{Human Distribution} & \textbf{LLM Distribution} \\
 \midrule
-DS2-Q7 & Medications & A & D & \textbf{3}
-& A:33\% D:33\% E:33\% & B:40\% C:11\% D:48\% \\
-DS4-Q7 & Medications & A & D & \textbf{3}
-& A:54\% C:41\% & C:35\% D:65\% \\
-DS1-Q5 & Test results & A & C & 2
-& A:100\% & C:92\% B:8\% \\
-DS3-Q5 & Test results & C & A & 2
-& C:55\% A:45\% & A:100\% \\
-DS4-Q5 & Test results & C & A & 2
-& C:88\% A:12\% & A:100\% \\
-DS1-Q8 & Follow-up & B & D & 2
-& A:40\% B:40\% & C:35\% D:65\% \\
-DS3-Q8 & Follow-up & B & D & 2
-& B:58\% C:42\% & D:79\% B:13\% \\
+DS2-Q6 & When to call doctor & A & E & \textbf{4}
+& A:34\% B:33\% D:32\% & E:100\% \\
+DS1-Q9 & Discharge plan coverage & D & B & 2
+& A:19\% C:22\% D:22\% E:20\% & B:71\% D:29\% \\
+DS2-Q7 & Activities prohibited & B & D & 2
+& B:41\% C:21\% D:37\% & B:40\% C:11\% D:48\% \\
+DS2-Q9 & Discharge plan coverage & A & C & 2
+& A:30\% B:22\% D:16\% E:11\% G:8\% & C:40\% D:37\% E:17\% B:6\% \\
+DS3-Q5 & Test results identified & C & A & 2
+& A:40\% B:10\% C:50\% & A:100\% \\
+DS3-Q9 & Discharge plan coverage & C & E & 2
+& A:20\% B:14\% C:24\% E:21\% & E:61\% C:39\% \\
+DS4-Q5 & Test results identified & C & A & 2
+& A:11\% B:9\% C:80\% & A:100\% \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -515,10 +516,11 @@ DS3-Q8 & Follow-up & B & D & 2
 Left panel: human distributions; right panel: LLM distributions. Colors
 encode ordinal responses from A (dark blue, most positive) through E (dark
 red, most negative). The $\Delta$ annotation indicates the ordinal gap
-between modal responses. DS2-Q7 and DS4-Q7 (medications) exhibit the largest
-gaps ($\Delta$=3), with human mass on A while the model concentrates on D.
-Test results questions (Q5) show directional reversals across discharge
-summary types.}
+between modal responses. DS2-Q6 (``when to call the doctor'') shows the
+largest gap ($\Delta$=4): the model collapses on E (``all of the above'')
+while humans select individual symptoms (A:34\%, B:33\%, D:32\%). Discharge
+plan coverage (Q9) and test results identification (Q5) account for the
+remaining six $\Delta$$\ge$2 gaps.}
 \label{fig:misalignment-worst}
 \end{figure}
 
@@ -526,58 +528,67 @@ Four distinct misalignment patterns emerged:
 
 \subsubsection{Pattern 1: Systematic ``Identified'' Bias on Factual Extraction (Q2--Q4)}
 
-The most pervasive pattern affected 9 of 32 questions. On questions asking
-whether specific clinical information (diagnosis, cause, tests) could be
-identified in the discharge summary, Sonnet~4.5 selected option B
-(``Yes, identified'') with near-100\% probability across DS2, DS3, and DS4.
-Human respondents, however, predominantly selected option C (``Not provided''
-or ``I don't know'') with 77--98\% frequency on the same questions.
+The most pervasive pattern affected the factual-extraction questions across
+DS2--DS4. On items asking whether specific clinical information (diagnosis,
+cause, tests) could be identified in the discharge summary, Sonnet~4.5
+selected option B (``Yes, identified'') with near-100\% probability, while
+human respondents predominantly selected option C (``Not provided'') with
+54--87\% frequency on the same questions. This pattern reveals a fundamental
+information-extraction bias: the model assumes that clinical content is
+readily identifiable in the discharge summary, whereas human
+patients---regardless of education level---frequently report that the
+information was not clearly provided. This ``identification optimism''
+likely stems from the model's ability to extract information from text that
+patients find ambiguous or inaccessible.
 
-This pattern reveals a fundamental information-extraction bias: the model
-assumes that clinical content is readily identifiable in the discharge
-summary, whereas human patients---regardless of education level---frequently
-report that the information was not clearly provided. This ``identification
-optimism'' likely stems from the model's ability to extract information from
-text that patients find ambiguous or inaccessible.
+\subsubsection{Pattern 2: ``When-to-call-the-doctor'' Collapse (DS2-Q6)}
 
-\subsubsection{Pattern 2: Medication Questions (Q7) --- Largest Individual Gaps}
-
-The 2 worst-aligned individual questions (modal distance\,$=$\,3) were
-both medication-related (DS2-Q7, DS4-Q7). On DS4-Q7, 54\% of humans
-selected A while the model concentrated 65\% on D---a 3-step ordinal gap.
-On DS2-Q7, the human distribution was trimodal (A:33\%, D:33\%, E:33\%),
-reflecting genuine human uncertainty, while the model peaked on D (48\%).
-Medication identification appears to be a domain where patient perception
-is highly variable and where the model fails to capture this variability.
+The single largest gap (modal distance $=$ 4) occurred on DS2-Q6,
+which asks which symptoms should prompt a call to the doctor. The
+model placed 100\% of its mass on option E (``All of the above''),
+whereas humans almost never picked the catch-all and instead distributed
+their selections across individual symptoms (A: Fever\,$>$\,101 = 34\%;
+B: Chest Pain = 33\%; D: Shortness of breath = 32\%). The model treats
+the multi-select question as if the safest answer is to flag every
+symptom; human respondents, by contrast, select the specific symptoms
+that the discharge summary actually warns about. This is the only
+question in the entire information block with a $\Delta$\,$\ge$\,3 gap.
 
 \subsubsection{Pattern 3: Test Results Reversal (Q5)}
 
 On test results identification (Q5), the model exhibited a directional
-reversal across discharge summaries. On DS1 (Short \& Difficult), where
-100\% of humans selected A (``identified''), the model selected C (``not
-identified'') with 92\% probability. Conversely, on DS3 and DS4, where
-humans predominantly selected C (55--88\%), the model selected A with
-100\% probability. The model appears to apply an incorrect heuristic:
-it judges results as identifiable in long documents and unidentifiable
-in short ones, while human respondents show the opposite pattern.
+reversal across discharge summaries. On DS3 and DS4, where 50--80\% of
+humans selected C (``not provided''), the model placed 100\% of its mass on
+A (``identified''). On DS1 the human and model modes coincide on C (humans
+76\%, model 92\%). The model thus over-claims that test results are
+present in the long, dense discharge summaries (DS3, DS4) while patients
+on the same documents report the opposite.
 
-\subsubsection{Pattern 4: Follow-up and Lifestyle Questions (Q8--Q9)}
+\subsubsection{Pattern 4: Multi-Select ``Discharge Plan Coverage'' (Q9 across DSes)}
 
-Follow-up identification (Q8) showed consistent model pessimism: on DS1
-and DS3, humans selected B (``identified'') while the model selected D
-(``not identified''), producing distance-2 gaps. Lifestyle questions (Q9)
-were non-ordinal in the human data (modal response G, outside the A--E
-scale), making them inherently non-comparable; these 4 questions were
-excluded from ordinal distance calculations.
+The Q9 item (``which of the following does your discharge plan cover?'')
+is a check-all-that-apply question with 7 options (medication schedule,
+follow-up, symptoms, diet, activity, other, none). Three of the four DSes
+(DS1, DS2, DS3) yielded a $\Delta$\,$=$\,2 gap: the model concentrates on
+one or two components (e.g., DS1: B+D = 100\%; DS3: C+E = 100\%), while
+humans report broader and more varied coverage that spans 4--5 options.
+The model treats this question as single-best-answer rather than recognizing
+its check-all-that-apply nature, producing systematically narrower coverage
+profiles than the human-reported ones.
 
 \subsubsection{Summary}
 
-Only 4 of 32 information questions (12.5\%) achieved perfect modal alignment.
-The dominant failure mode was a systematic identification-optimism bias:
-Sonnet~4.5 assumed clinical information was identifiable when patients reported
-it was not. This pattern was most pronounced on DS2--DS4 (the 3 discharge
-summaries where key information was either absent or ambiguously presented)
-and affected the core factual-extraction questions (diagnosis, cause, tests,
-medications). These results suggest that the model's superior text
-comprehension paradoxically undermines its ability to simulate patients
-who may lack the medical literacy to locate the same information.
+Eleven of 32 information questions (34\%) achieved perfect modal alignment;
+the dominant failure mode for the remaining 21 was a systematic
+identification-optimism bias on factual-extraction questions (Q2--Q5),
+where Sonnet~4.5 assumed clinical information was identifiable when
+patients reported it was not. The single most extreme gap occurred on a
+``when-to-call-the-doctor'' multi-select question, where the model
+collapsed onto the catch-all ``all of the above'' rather than the
+specific symptoms emphasized in the discharge summary, and an analogous
+single-best-answer collapse degraded the multi-select ``discharge plan
+coverage'' question (Q9) across three of the four DSes. These results
+suggest that the model's superior text comprehension paradoxically
+undermines its ability to simulate patients who may lack the medical
+literacy to locate the same information, and that it does not naturally
+distinguish multi-select questions from single-choice ones.

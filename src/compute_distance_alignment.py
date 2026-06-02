@@ -56,7 +56,7 @@ MAP_PATH = DATA_DIR / "mapping.txt"
 # Human xlsx column -> (DS number, Q-within-DS 1..10)
 DS_BLOCKS = {
     "DS1": (["Q6", "Q7", "Q8", "Q9", "Q10", "Q11", "Q12", "Q13", "Q14", "Q15"], 1),
-    "DS2": (["Q17", "Q18", "Q19", "Q20", "Q21", "Q22", "Q23", "Q24", "Q25", "Q26"], 2),
+    "DS2": (["Q17", "Q18", "Q19", "Q20", "Q21", "Q23", "Q24", "Q25", "Q22", "Q26"], 2),
     "DS3": (["Q28", "Q29", "Q30", "Q31", "Q32", "Q33", "Q34", "Q35", "Q36", "Q37"], 3),
     "DS4": (["Q39", "Q40", "Q41", "Q42", "Q43", "Q44", "Q45", "Q46", "Q47", "Q48"], 4),
 }
@@ -128,14 +128,31 @@ def parse_mapping_from_rtf(path: Path) -> Dict[str, Dict[str, str]]:
     return mappings
 
 
-def _map_response(raw: Optional[str], qmap: Dict[str, str]) -> Optional[str]:
+def _map_response(raw: Optional[str], qmap: Dict[str, str]) -> List[str]:
+    """Map a raw text answer to a list of option letters.
+
+    Returns a list because some questions are multi-select (comma-separated
+    options); each chosen option contributes one vote. Empty/unmapped raw
+    values return [].
+    """
     if not raw or str(raw).strip() == "":
-        return None
+        return []
     s = str(raw).strip()
     if s in qmap:
-        return qmap[s]
+        return [qmap[s]]
     lower = {k.lower(): v for k, v in qmap.items()}
-    return lower.get(s.lower())
+    if s.lower() in lower:
+        return [lower[s.lower()]]
+    parts = [p.strip() for p in s.split(",")]
+    if len(parts) > 1:
+        letters = []
+        for part in parts:
+            if part in qmap:
+                letters.append(qmap[part])
+            elif part.lower() in lower:
+                letters.append(lower[part.lower()])
+        return letters
+    return []
 
 
 # ---------------------------------------------------------------------------
@@ -200,11 +217,11 @@ def load_human_data(
             continue
         for col, dsq in col_to_dsq.items():
             raw = row_dict.get(col)
-            letter = _map_response(raw, mappings.get(col, {}))
-            if not letter:
+            letters = _map_response(raw, mappings.get(col, {}))
+            if not letters:
                 continue
             for lbl in labels:
-                accum[lbl].setdefault(dsq, []).append(letter)
+                accum[lbl].setdefault(dsq, []).extend(letters)
 
     subgroup_maj: Dict[str, PerqMaj] = {}
     subgroup_dist: Dict[str, PerqDist] = {}
