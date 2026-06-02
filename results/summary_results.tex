@@ -509,11 +509,11 @@ DS2-Q7 & Activities prohibited & B & D & 2
 & B:41\% C:21\% D:37\% & B:40\% C:11\% D:48\% \\
 DS2-Q9 & Discharge plan coverage & A & C & 2
 & A:30\% B:22\% D:16\% E:11\% G:8\% & C:40\% D:37\% E:17\% B:6\% \\
-DS3-Q5 & Test results identified & C & A & 2
+DS3-Q5 & Other prescriptions identified & C & A & 2
 & A:40\% B:10\% C:50\% & A:100\% \\
 DS3-Q9 & Discharge plan coverage & C & E & 2
 & A:20\% B:14\% C:24\% E:21\% & E:61\% C:39\% \\
-DS4-Q5 & Test results identified & C & A & 2
+DS4-Q5 & Other prescriptions identified & C & A & 2
 & A:11\% B:9\% C:80\% & A:100\% \\
 \bottomrule
 \end{tabular}
@@ -531,8 +531,8 @@ red, most negative). The $\Delta$ annotation indicates the ordinal gap
 between modal responses. DS2-Q6 (``when to call the doctor'') shows the
 largest gap ($\Delta$=4): the model collapses on E (``all of the above'')
 while humans select individual symptoms (A:34\%, B:33\%, D:32\%). Discharge
-plan coverage (Q9) and test results identification (Q5) account for the
-remaining six $\Delta$$\ge$2 gaps.}
+plan coverage (Q9) and other-prescription identification (Q5) account
+for the remaining six $\Delta$$\ge$2 gaps.}
 \label{fig:misalignment-worst}
 \end{figure}
 
@@ -566,15 +566,16 @@ symptom; human respondents, by contrast, select the specific symptoms
 that the discharge summary actually warns about. This is the only
 question in the entire information block with a $\Delta$\,$\ge$\,3 gap.
 
-\subsubsection{Pattern 3: Test Results Reversal (Q5)}
+\subsubsection{Pattern 3: Other-Prescription Identification Reversal (Q5)}
 
-On test results identification (Q5), the model exhibited a directional
-reversal across discharge summaries. On DS3 and DS4, where 50--80\% of
-humans selected C (``not provided''), the model placed 100\% of its mass on
-A (``identified''). On DS1 the human and model modes coincide on C (humans
-76\%, model 92\%). The model thus over-claims that test results are
-present in the long, dense discharge summaries (DS3, DS4) while patients
-on the same documents report the opposite.
+On the ``other prescriptions besides the listed medication'' item (Q5),
+the model exhibited a directional reversal across discharge summaries.
+On DS3 and DS4, where 50--80\% of humans selected C (``not provided''),
+the model placed 100\% of its mass on A (``identified''). On DS1 the
+human and model modes coincide on C (humans 76\%, model 92\%). The model
+thus over-claims that additional prescriptions are documented in the long,
+dense discharge summaries (DS3, DS4) while patients on the same documents
+report the opposite.
 
 \subsubsection{Pattern 4: Multi-Select ``Discharge Plan Coverage'' (Q9 across DSes)}
 

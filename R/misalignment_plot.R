@@ -23,13 +23,13 @@ rows <- list(
   list(q="DS2-Q9\nDischarge plan coverage", dist=2,
        hA=0.30, hB=0.22, hC=0.09, hD=0.16, hE=0.11,
        lA=0.00, lB=0.06, lC=0.40, lD=0.37, lE=0.17),
-  list(q="DS3-Q5\nTest results identified", dist=2,
+  list(q="DS3-Q5\nOther prescriptions identified", dist=2,
        hA=0.40, hB=0.10, hC=0.50, hD=0.00, hE=0.00,
        lA=1.00, lB=0.00, lC=0.00, lD=0.00, lE=0.00),
   list(q="DS3-Q9\nDischarge plan coverage", dist=2,
        hA=0.20, hB=0.14, hC=0.24, hD=0.10, hE=0.21,
        lA=0.00, lB=0.00, lC=0.39, lD=0.00, lE=0.61),
-  list(q="DS4-Q5\nTest results identified", dist=2,
+  list(q="DS4-Q5\nOther prescriptions identified", dist=2,
        hA=0.11, hB=0.09, hC=0.80, hD=0.00, hE=0.00,
        lA=1.00, lB=0.00, lC=0.00, lD=0.00, lE=0.00)
 )
