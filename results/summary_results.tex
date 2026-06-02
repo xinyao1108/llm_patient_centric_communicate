@@ -4,10 +4,6 @@
 % Subgroups: Edu-Low/High, Male/Female, OutLow/High, ERLow (7 total).
 % Frequency classification: weekly|monthly = high; yearly|never = low.
 %
-% Revision note: text in \textcolor{red}{...} marks values/claims that
-% changed after the DS2 column-mapping fix and the addition of
-% multi-select handling in compute_distance_alignment.py. Requires
-% \usepackage{xcolor} in the main document preamble.
 
 \subsection{Subgroup-Level Alignment With Human Responses}
 
@@ -101,12 +97,12 @@ GPT-4.1 & 1.11 & 1.18 & 0.99 & 1.02 & 1.01 & 0.99 & 1.01 & 4 \\
 \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
 & Low & High & Male & Female & Low & High & Low & \\
 \midrule
-Sonnet 4.5 & \textcolor{red}{0.91} & \textcolor{red}{0.88} & \textcolor{red}{0.88} & \textcolor{red}{0.91} & \textcolor{red}{0.94} & \textcolor{red}{0.97} & \textcolor{red}{0.88} & 4 \\
-Opus 4.6 & \textcolor{red}{0.66} & \textcolor{red}{0.62} & \textcolor{red}{\textbf{0.78}} & \textcolor{red}{0.66} & \textcolor{red}{0.78} & \textcolor{red}{0.72} & \textcolor{red}{0.66} & 4 \\
-GPT-5.2 & \textcolor{red}{0.78} & \textcolor{red}{0.59} & \textcolor{red}{0.72} & \textcolor{red}{0.78} & \textcolor{red}{0.81} & \textcolor{red}{0.75} & \textcolor{red}{0.69} & 4 \\
-GPT-4.1 & \textcolor{red}{0.91} & \textcolor{red}{0.78} & \textcolor{red}{0.75} & \textcolor{red}{0.75} & \textcolor{red}{0.75} & \textcolor{red}{0.75} & \textcolor{red}{0.75} & 4 \\
+Sonnet 4.5 & 0.91 & 0.88 & 0.88 & 0.91 & 0.94 & 0.97 & 0.88 & 4 \\
+Opus 4.6 & 0.66 & 0.62 & \textbf{0.78} & 0.66 & 0.78 & 0.72 & 0.66 & 4 \\
+GPT-5.2 & 0.78 & 0.59 & 0.72 & 0.78 & 0.81 & 0.75 & 0.69 & 4 \\
+GPT-4.1 & 0.91 & 0.78 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 4 \\
 \midrule
-\textit{Human (split-half)} & \textcolor{red}{0.44} & \textcolor{red}{0.36} & \textcolor{red}{0.52} & \textcolor{red}{0.26} & \textcolor{red}{0.34} & \textcolor{red}{0.49} & \textcolor{red}{0.32} & 4 \\
+\textit{Human (split-half)} & 0.44 & 0.36 & 0.52 & 0.26 & 0.34 & 0.49 & 0.32 & 4 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -129,12 +125,12 @@ GPT-4.1 & \textcolor{red}{0.91} & \textcolor{red}{0.78} & \textcolor{red}{0.75} 
 \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
 & Low & High & Male & Female & Low & High & Low & \\
 \midrule
-Sonnet 4.5 & \textcolor{red}{0.91} & \textcolor{red}{0.93} & \textcolor{red}{0.92} & \textcolor{red}{0.94} & \textcolor{red}{\textbf{0.93}} & \textcolor{red}{0.92} & \textcolor{red}{0.93} & 4 \\
-Opus 4.6 & \textcolor{red}{0.76} & \textcolor{red}{0.82} & \textcolor{red}{0.81} & \textcolor{red}{0.78} & \textcolor{red}{0.80} & \textcolor{red}{0.78} & \textcolor{red}{0.79} & 4 \\
-GPT-5.2 & \textcolor{red}{0.87} & \textcolor{red}{0.82} & \textcolor{red}{0.85} & \textcolor{red}{0.84} & \textcolor{red}{0.85} & \textcolor{red}{0.84} & \textcolor{red}{0.84} & 4 \\
-GPT-4.1 & \textcolor{red}{0.93} & \textcolor{red}{0.89} & \textcolor{red}{0.92} & \textcolor{red}{0.91} & \textcolor{red}{0.91} & \textcolor{red}{0.93} & \textcolor{red}{0.93} & 4 \\
+Sonnet 4.5 & 0.91 & 0.93 & 0.92 & 0.94 & \textbf{0.93} & 0.92 & 0.93 & 4 \\
+Opus 4.6 & 0.76 & 0.82 & 0.81 & 0.78 & 0.80 & 0.78 & 0.79 & 4 \\
+GPT-5.2 & 0.87 & 0.82 & 0.85 & 0.84 & 0.85 & 0.84 & 0.84 & 4 \\
+GPT-4.1 & 0.93 & 0.89 & 0.92 & 0.91 & 0.91 & 0.93 & 0.93 & 4 \\
 \midrule
-\textit{Human (split-half)} & \textcolor{red}{0.82} & \textcolor{red}{0.75} & \textcolor{red}{0.85} & \textcolor{red}{0.66} & \textcolor{red}{0.80} & \textcolor{red}{0.76} & \textcolor{red}{0.79} & 4 \\
+\textit{Human (split-half)} & 0.82 & 0.75 & 0.85 & 0.66 & 0.80 & 0.76 & 0.79 & 4 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -161,10 +157,10 @@ gap per metric.}
 & \textbf{Modal MAE} & \textbf{Modal MAE} & \textbf{EAD} & \textbf{EAD} \\
 & \textbf{(Perception)} & \textbf{(Information)} & \textbf{(Perception)} & \textbf{(Information)} \\
 \midrule
-Sonnet 4.5 & \textbf{+0.875} & \textcolor{red}{+0.030} & \textbf{+0.440}  & \textcolor{red}{$-$0.020} \\
-Opus 4.6   & +0.125           & \textcolor{red}{+0.040}            & $-$0.130         & \textcolor{red}{\textbf{$-$0.060}} \\
-GPT-5.2    & $-$0.125         & \textcolor{red}{\textbf{+0.190}}   & $-$0.060         & \textcolor{red}{+0.050} \\
-GPT-4.1    & +0.250           & \textcolor{red}{+0.130}            & $-$0.080         & \textcolor{red}{+0.040} \\
+Sonnet 4.5 & \textbf{+0.875} & +0.030 & \textbf{+0.440}  & $-$0.020 \\
+Opus 4.6   & +0.125           & +0.040            & $-$0.130         & \textbf{$-$0.060} \\
+GPT-5.2    & $-$0.125         & \textbf{+0.190}   & $-$0.060         & +0.050 \\
+GPT-4.1    & +0.250           & +0.130            & $-$0.080         & +0.040 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -183,10 +179,10 @@ for the male subgroup. Bold marks the largest absolute gap per metric.}
 & \textbf{Modal MAE} & \textbf{Modal MAE} & \textbf{EAD} & \textbf{EAD} \\
 & \textbf{(Perception)} & \textbf{(Information)} & \textbf{(Perception)} & \textbf{(Information)} \\
 \midrule
-Sonnet 4.5 & +0.125           & \textcolor{red}{$-$0.030}   & $-$0.050          & \textcolor{red}{$-$0.020} \\
-Opus 4.6   & 0.000            & \textcolor{red}{\textbf{+0.120}}             & $-$0.020          & \textcolor{red}{\textbf{+0.030}} \\
-GPT-5.2    & +0.375           & \textcolor{red}{$-$0.060}             & \textbf{$-$0.060} & \textcolor{red}{+0.010} \\
-GPT-4.1    & \textbf{+0.625}  & \textcolor{red}{0.000}             & $-$0.030          & \textcolor{red}{+0.010} \\
+Sonnet 4.5 & +0.125           & $-$0.030   & $-$0.050          & $-$0.020 \\
+Opus 4.6   & 0.000            & \textbf{+0.120}             & $-$0.020          & \textbf{+0.030} \\
+GPT-5.2    & +0.375           & $-$0.060             & \textbf{$-$0.060} & +0.010 \\
+GPT-4.1    & \textbf{+0.625}  & 0.000             & $-$0.030          & +0.010 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -198,7 +194,7 @@ its modal MAE for the low-education subgroup on perception questions was 1.62,
 compared with 0.75 for the high-education subgroup---a gap of \textbf{+0.875}
 (Table~\ref{tab:edu-gap}), the largest observed across all model-metric
 combinations. The corresponding distributional metric (EAD) confirmed this
-disparity (gap$=$\textcolor{red}{+0.440}). These results indicate that
+disparity (gap$=$+0.440). These results indicate that
 Sonnet~4.5 defaults to a response pattern more representative of highly
 educated individuals and fails to capture how patients with lower health
 literacy perceive discharge summaries.
@@ -208,13 +204,13 @@ performance on perception questions: its perception modal MAE gap was only
 +0.125, and its EAD gap slightly favored the low-education subgroup
 ($-$0.130). GPT-5.2 was the only model that achieved better modal alignment
 for the low-education group on perception questions (gap$=$$-$0.125);
-\textcolor{red}{however, after the multi-select correction it now exhibits
+however, after the multi-select correction it now exhibits
 the largest education gap on information-based modal MAE (+0.190),
 substantially down from the originally reported +0.235 but still the widest
 across models. Sonnet 4.5's information-question education gap, previously
 estimated at +0.135, collapses to near-zero (+0.030); the low/high-education
 disparity on this model is now concentrated almost entirely on perception
-items.}
+items.
 
 \subsubsection{Sex Gap}
 
@@ -224,20 +220,20 @@ score of 1.25 versus a female-subgroup score of 0.62. This gap
 was attributable to mode flips rather than broad distributional
 mismatch, as the EAD gap for the same model was only $-$0.030.
 
-\textcolor{red}{For information-based questions, the previously reported
+For information-based questions, the previously reported
 Sonnet 4.5 sex gap (modal MAE +0.214) was an artefact of the original DS2
 column-mapping bug; under the corrected and multi-select-aware mapping the
 gap reverses sign and shrinks to $-$0.030 (male$=$0.88, female$=$0.91),
 i.e., effectively zero. The largest information-question sex gap is now
 held by Opus 4.6 (modal MAE +0.120; male$=$0.78, female$=$0.66), and
-GPT-5.2 also shows a mild reversal ($-$0.060).} Opus~4.6 remained the most
+GPT-5.2 also shows a mild reversal ($-$0.060). Opus~4.6 remained the most
 sex-equitable model on the perception side, with identical scores across
 sexes (1.12 vs 1.12; gap$=$0.000).
 
-\textcolor{red}{Across all models, EAD sex gaps were uniformly small
+Across all models, EAD sex gaps were uniformly small
 ($\le$0.030 in absolute value), suggesting that the sex-based differences
 visible in modal MAE largely reflect mode-switching sensitivity rather
-than systematic distributional bias.}
+than systematic distributional bias.
 
 
 \subsection{Effect of Discharge Summary Type on Education Gap}
@@ -286,12 +282,12 @@ Perception
 & Overall              & 1.62 & 0.75 & +0.88           & 1.29 & 0.85 & +0.44 \\
 \midrule
 Information
-& DS1: Short+Difficult & \textcolor{red}{0.25} & \textcolor{red}{0.38} & \textcolor{red}{$-$0.13} & \textcolor{red}{0.44} & \textcolor{red}{0.52} & \textcolor{red}{$-$0.07} \\
-& DS2: Long+Simple     & \textcolor{red}{1.50} & \textcolor{red}{1.25} & \textcolor{red}{\textbf{+0.25}}  & \textcolor{red}{1.21} & \textcolor{red}{1.16} & \textcolor{red}{\textbf{+0.05}} \\
-& DS3: Long+Difficult  & \textcolor{red}{1.13} & \textcolor{red}{0.88} & \textcolor{red}{+0.25}         & \textcolor{red}{0.99} & \textcolor{red}{1.02} & \textcolor{red}{$-$0.03} \\
-& DS4: Short+Simple    & \textcolor{red}{0.75} & \textcolor{red}{1.00} & \textcolor{red}{$-$0.25}         & \textcolor{red}{1.00} & \textcolor{red}{1.01} & \textcolor{red}{$-$0.01} \\
+& DS1: Short+Difficult & 0.25 & 0.38 & $-$0.13 & 0.44 & 0.52 & $-$0.07 \\
+& DS2: Long+Simple     & 1.50 & 1.25 & \textbf{+0.25}  & 1.21 & 1.16 & \textbf{+0.05} \\
+& DS3: Long+Difficult  & 1.13 & 0.88 & +0.25         & 0.99 & 1.02 & $-$0.03 \\
+& DS4: Short+Simple    & 0.75 & 1.00 & $-$0.25         & 1.00 & 1.01 & $-$0.01 \\
 \cmidrule(lr){2-8}
-& Overall              & \textcolor{red}{0.91} & \textcolor{red}{0.88} & \textcolor{red}{+0.03}           & \textcolor{red}{0.91} & \textcolor{red}{0.93} & \textcolor{red}{$-$0.02} \\
+& Overall              & 0.91 & 0.88 & +0.03           & 0.91 & 0.93 & $-$0.02 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -319,7 +315,7 @@ matched human modes, explaining the near-zero gap on DS1.
 
 \subsubsection{Information Questions}
 
-\textcolor{red}{Under the corrected mapping the information-question education
+Under the corrected mapping the information-question education
 gaps are uniformly small and split in direction across discharge summaries:
 DS2 and DS3 produce mild positive gaps (+0.25 each, meaning the model
 aligns slightly better with the high-education subgroup), while DS1 and
@@ -329,11 +325,11 @@ gap on DS1 ($-$0.50/$-$0.55) and large positive gap on DS2 (+0.43) were
 inflated by the DS2 column-mapping error and by single-letter dropping
 of multi-select responses; once both are corrected, no single discharge
 summary stands out as a strong driver of education-related information-gap
-behavior.}
+behavior.
 
 \subsubsection{Interaction Between Length and Complexity}
 
-\textcolor{red}{One pattern survives the correction; the other does not.}
+One pattern survives the correction; the other does not.
 
 \begin{enumerate}\itemsep2pt
 \item \textbf{Medical complexity amplifies the perception gap when documents are
@@ -344,13 +340,13 @@ behavior.}
   over-indexes on complexity as a cue that low-education patients would struggle,
   while actual low-education respondents did not report substantially lower clarity.
 
-\item \textcolor{red}{\textbf{Document length does \emph{not} amplify the
+\item \textbf{Document length does \emph{not} amplify the
   information gap.} The previously reported pattern ($+$0.43 on DS2 vs
   $-$0.50 on DS1) does not survive the methodology corrections. Per-DS
   information-question gaps are uniformly $\le$0.25 in absolute value and
   do not order cleanly by length or complexity. The earlier interpretation
   attributing differential education-dependent processing to document length
-  is no longer supported.}
+  is no longer supported.
 \end{enumerate}
 
 % ---------- Figure 1: Dumbbell chart ----------
