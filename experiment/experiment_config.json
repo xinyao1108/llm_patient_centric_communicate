@@ -1,0 +1,21 @@
+{
+  "persona_variations": {
+    "age": ["25", "45", "65"],
+    "gender": ["male", "female"],
+    "education": ["high", "low"],
+    "ethnicity": ["White", "Black", "Hispanic", "Asian"],
+    "doctor_visit": ["High", "Low"],
+    "er_visit_frequency": ["High", "Low"]
+  },
+  "discharge_summary_ids": ["DS1", "DS2", "DS3", "DS4"],
+  "question_ids": ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10"],
+  "temperature": 1.0,
+  "enable_reasoning": false,
+  "max_personas": null,
+  "models": [
+    {"model": "gpt-4.1", "provider": "openai", "iterations": 10},
+    {"model": "gpt-5.2", "provider": "openai", "iterations": 10},
+    {"model": "claude-sonnet-4-5-20241022", "provider": "anthropic", "iterations": 10}
+  ],
+  "output_dir": "results"
+}

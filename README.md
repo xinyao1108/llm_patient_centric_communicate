@@ -29,6 +29,10 @@ summary comprehension questions, against human survey responses.
 │   ├── violin_plot.R                      Figs: violin_plot_overall.png, violin_plot_by_type.png
 │   ├── ds_edu_distribution_plot.R         Figs 1-3: dumbbell + two stacked-bar charts
 │   └── misalignment_plot.R                Fig 4: misalignment_worst_questions.png (data hardcoded)
+├── experiment/                            Upstream code that generates data/add_exp_results/*.json
+│   ├── experiment_config.json             Persona grid, model list, iteration counts
+│   ├── persona_discharge_query.py         Query engine with per-DS question variants for Q6/Q7
+│   └── run_experiment.py                  Driver: persona x DS x question x iteration -> JSON
 └── results/                               Final tables and figures
     ├── summary_results.tex                Curated main results (Tables 1-10 + narrative)
     ├── auto_alignment_tables.tex          Auto-regenerated alignment + stat tables (output of statistical_analysis.py)
