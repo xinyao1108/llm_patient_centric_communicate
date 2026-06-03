@@ -37,6 +37,7 @@ from compute_distance_alignment import (
     _first_letter,
     parse_mapping_from_rtf,
 )
+from summarize_combined_response import map_response
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR.parent / "data"
@@ -105,12 +106,11 @@ def collect_human_rows(mappings: Dict[str, Dict[str, str]]) -> List[Tuple[str, s
             raw = row_dict.get(col)
             if raw is None or str(raw).strip() == "":
                 continue
-            s = str(raw).strip()
             qmap = mappings.get(col, {})
-            letter = qmap.get(s) or {k.lower(): v for k, v in qmap.items()}.get(s.lower())
-            if letter not in ORDINAL:
-                continue
-            out.append(("Human", edu, ds, q, question_type(q), letter))
+            for letter in map_response(raw, qmap):
+                if letter not in ORDINAL:
+                    continue
+                out.append(("Human", edu, ds, q, question_type(q), letter))
     return out
 
 

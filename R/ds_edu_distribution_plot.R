@@ -159,7 +159,7 @@ p_dumbbell <- ggplot(mae_wide, aes(y = reorder(ds_label, -ds))) +
   geom_point(aes(x = Edu_High), color = "#2166AC", size = 3.5) +
   geom_point(aes(x = Edu_Low),  color = "#B2182B", size = 3.5) +
   geom_text(aes(x = (Edu_Low + Edu_High) / 2,
-                label = sprintf("%+.2f", gap)),
+                label = sprintf("%+.2f", sign(gap) * round(abs(gap) + 1e-9, 2))),
             vjust = -0.8, size = 3.2, fontface = "bold") +
   facet_wrap(~ question_type, ncol = 2, scales = "free_x") +
   scale_x_continuous(expand = expansion(mult = c(0.05, 0.15))) +
